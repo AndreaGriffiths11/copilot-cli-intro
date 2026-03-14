@@ -6,19 +6,38 @@
 <title>GITHUB COPILOT CLI</title>
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
-html, body { height: 100%; overflow: hidden; }
+html, body { height: 100%; overflow: hidden; background: #000; }
 .slide {
     width: 100vw; height: 100vh;
     display: none; position: relative;
     overflow: hidden;
 }
-.slide.active { display: block; }
+.slide.active { display: flex; align-items: center; justify-content: center; }
+.slide-inner {
+    position: relative;
+    width: 100vw; height: 100vh;
+    flex-shrink: 0;
+}
+@media (max-aspect-ratio: 4/3) {
+    .slide-inner {
+        width: 100vw;
+        height: calc(100vw / 1.7778);
+        max-height: 100vh;
+    }
+}
+@media (max-aspect-ratio: 4/3) and (min-height: calc(100vw / 1.7778)) {
+    .slide-inner {
+        width: calc(100vh * 1.7778);
+        height: 100vh;
+    }
+}
 .progress { position: fixed; bottom: 0; left: 0; height: 4px; background: #0366d6; transition: width 0.3s; z-index: 100; }
-.counter { position: fixed; bottom: 12px; right: 20px; font-size: 14px; color: rgba(0,0,0,0.4); z-index: 100; }
+.counter { position: fixed; bottom: 12px; right: 20px; font-size: 14px; color: rgba(255,255,255,0.4); z-index: 100; }
 </style>
 </head>
 <body>
 <section class="slide" style="background-color:#0D1117">
+<div class="slide-inner">
 <div style="position:absolute;left:2.8%;top:6.8%;width:55.0%;height:5.7%;overflow:hidden;display:flex;flex-direction:column;justify-content:center"><p style="text-align:left;margin:0.3em 0;line-height:1.4"><span style="font-weight:bold;font-size:11.0pt;color:#2DD4BF;font-family:'Consolas',sans-serif">GITHUB COPILOT CLI</span></p></div>
 <div style="position:absolute;left:63.8%;top:8.4%;width:6.0%;height:5.0%;overflow:hidden;display:flex;flex-direction:column;justify-content:center"><p style="text-align:left;margin:0.3em 0;line-height:1.4"><span style="font-weight:bold;font-size:11.0pt;color:#2DD4BF;font-family:'Consolas',sans-serif">01</span></p></div>
 <div style="position:absolute;left:2.8%;top:13.3%;width:58.0%;height:28.4%;overflow:hidden;display:flex;flex-direction:column;justify-content:center"><p style="text-align:left;margin:0.3em 0;line-height:1.4"><span style="font-weight:bold;font-size:40.0pt;color:#F0F6FC;font-family:'Calibri',sans-serif">Agentic Workflows</span></p><p style="text-align:left;margin:0.3em 0;line-height:1.4"><span style="font-weight:bold;font-size:40.0pt;color:#F0F6FC;font-family:'Calibri',sans-serif">That Actually Work</span></p></div>
@@ -35,8 +54,10 @@ html, body { height: 100%; overflow: hidden; }
 <div style="position:absolute;left:63.8%;top:74.5%;width:32.0%;height:6.8%;overflow:hidden;display:flex;flex-direction:column;justify-content:center"><p style="text-align:left;margin:0.3em 0;line-height:1.4"><span style="font-weight:bold;font-size:18.0pt;color:#F0F6FC;font-family:'Calibri',sans-serif">Fits Your Flow</span></p></div>
 <div style="position:absolute;left:63.8%;top:81.6%;width:32.0%;height:10.7%;overflow:hidden;display:flex;flex-direction:column;justify-content:center"><p style="text-align:left;margin:0.3em 0;line-height:1.4"><span style="font-size:13.0pt;color:#8B949E;font-family:'Calibri',sans-serif">GitHub MCP ships by default.</span></p><p style="text-align:left;margin:0.3em 0;line-height:1.4"><span style="font-size:13.0pt;color:#8B949E;font-family:'Calibri',sans-serif">Your terminal. Your tools.</span></p></div>
 <div style="position:absolute;left:2.8%;top:93.3%;width:94.0%;height:4.6%;overflow:hidden;display:flex;flex-direction:column;justify-content:center"><p style="text-align:left;margin:0.3em 0;line-height:1.4"><span style="font-size:10.0pt;color:#8B949E;font-family:'Calibri',sans-serif">andreagriffiths.dev  ·  @acolombiadev</span></p></div>
+</div>
 </section>
 <section class="slide" style="background-color:#0D1117">
+<div class="slide-inner">
 <div style="position:absolute;left:3.0%;top:2.8%;width:94.0%;height:7.5%;overflow:hidden;display:flex;flex-direction:column;justify-content:center"><p style="text-align:left;margin:0.3em 0;line-height:1.4"><span style="font-weight:bold;font-size:16.0pt;color:#2DD4BF;font-family:'Consolas',sans-serif">⌨  SLASH COMMAND CHEAT SHEET</span></p></div>
 <div style="position:absolute;left:3.2%;top:20.6%;width:15.0%;height:6.0%;overflow:hidden;display:flex;flex-direction:column;justify-content:center"><p style="text-align:left;margin:0.3em 0;line-height:1.4"><span style="font-weight:bold;font-size:13.0pt;color:#E3B341;font-family:'Consolas',sans-serif">/login</span></p></div>
 <div style="position:absolute;left:19.0%;top:20.6%;width:26.0%;height:6.0%;overflow:hidden;display:flex;flex-direction:column;justify-content:center"><p style="text-align:left;margin:0.3em 0;line-height:1.4"><span style="font-size:13.0pt;color:#F0F6FC;font-family:'Calibri',sans-serif">Authenticate with your GitHub account</span></p></div>
@@ -59,8 +80,10 @@ html, body { height: 100%; overflow: hidden; }
 <div style="position:absolute;left:54.8%;top:74.7%;width:15.0%;height:6.0%;overflow:hidden;display:flex;flex-direction:column;justify-content:center"><p style="text-align:left;margin:0.3em 0;line-height:1.4"><span style="font-weight:bold;font-size:13.0pt;color:#2DD4BF;font-family:'Consolas',sans-serif">Ctrl+R</span></p></div>
 <div style="position:absolute;left:70.6%;top:74.7%;width:26.0%;height:6.0%;overflow:hidden;display:flex;flex-direction:column;justify-content:center"><p style="text-align:left;margin:0.3em 0;line-height:1.4"><span style="font-size:13.0pt;color:#F0F6FC;font-family:'Calibri',sans-serif">Review logs of commands run on your behalf</span></p></div>
 <div style="position:absolute;left:4.2%;top:90.0%;width:91.6%;height:6.0%;overflow:hidden;display:flex;flex-direction:column;justify-content:center"><p style="text-align:left;margin:0.3em 0;line-height:1.4"><span style="font-size:13.0pt;color:#2DD4BF;font-family:'Calibri',sans-serif">💡  Pro tip: Type / at any prompt to see the full command menu. You can @-mention files to focus Copilot on specific code.</span></p></div>
+</div>
 </section>
 <section class="slide" style="background-color:#0D1117">
+<div class="slide-inner">
 <div style="position:absolute;left:2.8%;top:3.9%;width:64.0%;height:11.0%;overflow:hidden;display:flex;flex-direction:column;justify-content:center"><p style="text-align:left;margin:0.3em 0;line-height:1.4"><span style="font-weight:bold;font-size:30.0pt;color:#F0F6FC;font-family:'Calibri',sans-serif">It Fits Where You Already Work</span></p></div>
 <div style="position:absolute;left:2.8%;top:15.6%;width:62.0%;height:6.8%;overflow:hidden;display:flex;flex-direction:column;justify-content:center"><p style="text-align:left;margin:0.3em 0;line-height:1.4"><span style="font-style:italic;font-size:15.0pt;color:#8B949E;font-family:'Calibri',sans-serif">The terminal is already your home. Copilot CLI just lives there now.</span></p></div>
 <div style="position:absolute;left:62.8%;top:24.9%;width:33.6%;height:5.7%;overflow:hidden;display:flex;flex-direction:column;justify-content:center"><p style="text-align:left;margin:0.3em 0;line-height:1.4"><span style="font-weight:bold;font-size:15.0pt;color:#F0F6FC;font-family:'Calibri',sans-serif">GitHub MCP built in</span></p></div>
@@ -82,6 +105,7 @@ html, body { height: 100%; overflow: hidden; }
 <div style="position:absolute;left:8.6%;top:77.2%;width:24.0%;height:4.6%;overflow:hidden;display:flex;flex-direction:column;justify-content:center"><p style="text-align:left;margin:0.3em 0;line-height:1.4"><span style="font-weight:bold;font-size:14.0pt;color:#F0F6FC;font-family:'Calibri',sans-serif">Ship it</span></p></div>
 <div style="position:absolute;left:8.6%;top:81.8%;width:50.0%;height:3.9%;overflow:hidden;display:flex;flex-direction:column;justify-content:center"><p style="text-align:left;margin:0.3em 0;line-height:1.4"><span style="font-size:11.0pt;color:#3FB950;font-family:'Consolas',sans-serif">"Stage changes, write commit, open draft PR."</span></p></div>
 <div style="position:absolute;left:4.2%;top:91.2%;width:91.6%;height:5.0%;overflow:hidden;display:flex;flex-direction:column;justify-content:center"><p style="text-align:left;margin:0.3em 0;line-height:1.4"><span style="font-weight:bold;font-size:12.0pt;color:#0D1117;font-family:'Calibri',sans-serif">Full guide: </span><span style="font-weight:bold;text-decoration:underline;font-size:12.0pt;color:#0D1117;font-family:'Calibri',sans-serif">andreagriffiths11.github.io/copilot-cli-at-work</span><span style="font-weight:bold;font-size:12.0pt;color:#0D1117;font-family:'Calibri',sans-serif">  ·  </span><span style="font-weight:bold;text-decoration:underline;font-size:12.0pt;color:#0D1117;font-family:'Calibri',sans-serif">ag11.dev</span></p></div>
+</div>
 </section>
 <div class="progress" id="progress"></div>
 <div class="counter" id="counter"></div>
